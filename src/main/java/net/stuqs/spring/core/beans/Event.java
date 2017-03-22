@@ -11,8 +11,8 @@ public class Event {
     private int id;
     private String msg;
     private Date date;
-
     private DateFormat dateFormat;
+
 
     public Event(Date date, DateFormat df) {
         this.id = AUTO_ID.getAndIncrement();
@@ -41,5 +41,4 @@ public class Event {
     public String toString() {
         return "Event [id=" + id + ", msg=" + msg + ", date=" + dateFormat.format(date) + "]";
     }
-
 }

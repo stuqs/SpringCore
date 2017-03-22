@@ -2,7 +2,6 @@ package net.stuqs.spring.core.loggers;
 
 import net.stuqs.spring.core.beans.Event;
 
-import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

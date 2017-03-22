@@ -2,9 +2,6 @@ package net.stuqs.spring.core.loggers;
 
 import net.stuqs.spring.core.beans.Event;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
