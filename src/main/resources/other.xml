@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        default-lazy-init="true"
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:c="http://www.springframework.org/schema/c"
+        xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+
+    <bean id="dateFormat" class="java.text.DateFormat" factory-method="getDateInstance"/>
+
+    <!--Event-->
+    <bean id="event" class="net.stuqs.spring.core.beans.Event" scope="prototype" c:_1-ref="dateFormat">
+        <constructor-arg index="0">
+            <bean class="java.util.Date"/>
+        </constructor-arg>
+    </bean>
+
+</beans>

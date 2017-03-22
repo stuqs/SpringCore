@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        default-lazy-init="true"
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:c="http://www.springframework.org/schema/c"
+        xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+
+    <!--Loggers-->
+    <bean id="consoleEventLogger" class="net.stuqs.spring.core.loggers.ConsoleEventLogger"/>
+
+    <bean id="fileEventLogger" class="net.stuqs.spring.core.loggers.FileEventLogger" init-method="init"
+          c:_0="target/test.txt"/>
+
+    <bean id="cacheFileEventLogger" class="net.stuqs.spring.core.loggers.CacheFileEventLogger" init-method="init"
+          destroy-method="destroy" c:_0="target/test.txt" c:_1="12"/>
+
+    <bean id="combinedEventLogger" class="net.stuqs.spring.core.loggers.CombinedEventLogger">
+        <constructor-arg>
+            <list>
+                <ref bean="consoleEventLogger"/>
+                <ref bean="fileEventLogger"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
